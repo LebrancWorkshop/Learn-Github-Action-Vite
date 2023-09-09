@@ -24,8 +24,10 @@ jobs:
         with:
           version: 8
           run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+            - recursive: false
+
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Build Project
         run: pnpm run build
